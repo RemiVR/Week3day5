@@ -214,9 +214,6 @@ body{
 }
 
 #blank-close{
-    width: 15px;
-    height: 15px;
-    background-color: red;
     cursor: pointer;
 }
 
