@@ -42,6 +42,7 @@ $("#emails li").bind("click", function(){
 	});
 });
 
+//Inbox content
 $("#backoff").bind("click", function(){
 	$("#readEmail").fadeOut();
 	$("#emails li").fadeIn();
@@ -51,6 +52,11 @@ $("#indexTab").bind("click", function(){
 	$("#emails li").fadeIn();
 	$("#readEmail").fadeOut();
 });
+
+$("#emails li").bind("click", function(){
+		$(".starred").toggle();
+});
+
 // $("#emails li").click(function(){
 // 	$("#readEmail").show();
 // });
