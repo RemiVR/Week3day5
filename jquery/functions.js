@@ -18,6 +18,7 @@ $("#send").bind("click", function(){
 	$.post(SERVER + "/email", function(data){
 		alert("Email sent");
 		$("#blank-email").hide();
-		$("#blank-to").text("");
+		$("#new_email input").val("");
+		$("#new_email textarea").val("");
 	});
 });
