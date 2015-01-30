@@ -1,4 +1,5 @@
-// $("#compose").text("Hello");
+$(document).ready(function(){
+
 var SERVER = 'https://vast-earth-2490.herokuapp.com'
 
 // New mail window
@@ -26,21 +27,61 @@ $("#send").bind("click", function(){
 	});
 });
 
-$("#inbox").bind("click", function(){
-	$.get(SERVER + "/email/new", function(data){
-		$.each(data, function(emailId, email){
-			console.log(email.subject)
-		})
-		// console.log(data)
+// Review email content
+$("#emails li").bind("click", function(){
+	$("#emails li").fadeOut();
+	var id = $(this).data("id");
+	var url = SERVER + "/email/" + id;
+	$.get(url, function(data){
+		console.log(data);
+		// $("#readEmail").html("<h3>From: " + data.from + "</h3>" + "<p>" + data.subject + "</p>" + data.preview).show();
+		$("#readEmail").fadeIn();
+			$(".fromInside").html(data.from);
+			$(".subjectInside").html(data.subject);
+			$(".allEmailText").html(data.preview);
 	});
 });
 
-var emails = {
-	112233: {
-		subject: 'my subject...',
+$("#backoff").bind("click", function(){
+	$("#readEmail").fadeOut();
+	$("#emails li").fadeIn();
+});
 
-	}
-};
+$("#indexTab").bind("click", function(){
+	$("#emails li").fadeIn();
+	$("#readEmail").fadeOut();
+});
+// $("#emails li").click(function(){
+// 	$("#readEmail").show();
+// });
+// var emails = {
+// 	112233: {
+// 		subject: 'my subject...',
+
+// 	}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

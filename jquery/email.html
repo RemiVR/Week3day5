@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="ccs/bootstrap.css">
   </head>
 
   <body>
@@ -19,7 +20,7 @@
 
         <div id="labels">
           <ul id="main-labels">
-            <li id="inbox">Inbox ›</li>
+            <li id="indexTab">Inbox ›</li>
             <li>Starred ›</li>
             <li>Sent mail ›</li>
             <li>Drafts ›</li>
@@ -56,9 +57,10 @@
         <div id="notifications"></div>
 
         <div id="readEmail">
-          <div class="fromInside"></div>
-          <div class="subjectInside"></div>
-          <div class="allEmailText"></div>
+          <button id="backoff" type="button" class="btn btn-default btn-lg">Back</button>
+          <div class="fromInside">From whom</div>
+          <div class="subjectInside">Subject of email</div>
+          <div class="allEmailText">The content of email</div>
         </div>
 
         <ul id="emails">
