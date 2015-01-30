@@ -53,8 +53,10 @@ $("#indexTab").bind("click", function(){
 	$("#readEmail").fadeOut();
 });
 
-$("#emails li").bind("click", function(){
-		$(".starred").toggle();
+$("#emails").delegate(".starred","click", function(event){
+		event.stopPropagation();
+		$(this).data("starred");
+
 });
 
 // $("#emails li").click(function(){
